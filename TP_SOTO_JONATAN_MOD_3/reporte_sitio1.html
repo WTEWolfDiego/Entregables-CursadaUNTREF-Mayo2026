@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Automatización</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .header h1 { margin: 0; font-size: 28px; font-weight: 700; }
+        .header p { margin: 5px 0 0 0; opacity: 0.9; font-size: 14px; }
+        
+        .grid-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        .card-title { font-size: 12px; text-transform: uppercase; color: #6b7280; font-weight: 600; letter-spacing: 0.5px; }
+        .card-value { font-size: 24px; font-weight: 700; margin-top: 5px; }
+        
+        .status-badge-suite {
+            background-color: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+            color: #475569;
+            padding: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        td {
+            padding: 18px 16px;
+            font-size: 14px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        tr:hover td { background-color: #f8fafc; }
+        
+        .badge-passed {
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .badge-failed {
+            background-color: #fee2e2;
+            color: #991b1b;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Reporte de Automatización Web - SOTO JONATAN</h1>
+            <p>Ecosistema de Pruebas - Sitio SauceDemo</p>
+        </div>
+        
+        <div class="grid-stats">
+            <div class="card">
+                <div class="card-title">Ejecución</div>
+                <div class="card-value" style="font-size: 14px; color: #374151; margin-top: 12px;">07-06-2026 21:29:37</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Tests Totales</div>
+                <div class="card-value" style="color: #2563eb;">3</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Casos Pasados</div>
+                <div class="card-value" style="color: #10b981;">3</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Estado Final</div>
+                <div class="status-badge-suite">EXITOSA</div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Caso de Prueba</th>
+                        <th style="width: 45%;">Descripción del Escenario</th>
+                        <th style="width: 15%;">Duración</th>
+                        <th style="width: 15%;">Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td style="font-weight: 600; color: #1e3a8a;">Caso 1 Ordenar Precios</td>
+                        <td style="color: #4b5563;">Caso 1: loguearse, ordenar de menor a mayor el precio y verificar que los productos estén ordenados.</td>
+                        <td style="color: #6b7280; font-family: monospace;">1.43 seg</td>
+                        <td><span class="badge-passed">PASSED</span></td>
+                    </tr>
+        
+                    <tr>
+                        <td style="font-weight: 600; color: #1e3a8a;">Caso 2 Validar Checkout</td>
+                        <td style="color: #4b5563;">Caso 2: agregar todo, ir al checkout y validar errores dinámicos de campos vacíos.</td>
+                        <td style="color: #6b7280; font-family: monospace;">0.55 seg</td>
+                        <td><span class="badge-passed">PASSED</span></td>
+                    </tr>
+        
+                    <tr>
+                        <td style="font-weight: 600; color: #1e3a8a;">Caso 3 Flujo Compra y Eliminacion</td>
+                        <td style="color: #4b5563;">Caso 3: circuito completo de agregar, eliminar, reabastecer y finalizar compra.</td>
+                        <td style="color: #6b7280; font-family: monospace;">0.6 seg</td>
+                        <td><span class="badge-passed">PASSED</span></td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+    
