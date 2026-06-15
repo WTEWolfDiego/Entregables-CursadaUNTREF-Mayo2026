@@ -36,9 +36,7 @@ driver.find_element(By.ID, "remove-sauce-labs-backpack").click()
 time.sleep(1)
 
 
-### Verificar que el sitio no tiene artículos agregados
-### Explicación técnica para la corrección: En SauceDemo, cuando el carrito queda en 0, 
-### la etiqueta 'shopping_cart_badge' desaparece por completo del HTML. 
+### Verificar que el sitio no tiene artículos agregados 
 ### Usamos 'find_elements' (en plural) para verificar que la lista esté vacía sin que se rompa el script.
 items_badge = driver.find_elements(By.CLASS_NAME, "shopping_cart_badge")
 assert len(items_badge) == 0, "Error: El carrito debería estar vacío, pero aún registra elementos"
